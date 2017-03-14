@@ -10,7 +10,7 @@
 
 @interface MotionDataView : UIView
 // Public methods
-- (void)updateMotionDataViewWithX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z Pitch:(double)pitch Roll:(double)roll Yaw:(double)yaw;
+- (void)updateMotionDataViewWithX:(CGFloat)x y:(CGFloat)y z:(CGFloat)z pitch:(double)pitch roll:(double)roll yaw:(double)yaw;
 
 // Properties
 @property (nonatomic, strong) UIView *viewAccX;

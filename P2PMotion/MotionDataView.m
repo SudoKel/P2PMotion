@@ -75,7 +75,7 @@
 }
 
 /** This method updates the display with new data for acceleration and rotation */
-- (void)updateMotionDataViewWithX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z Pitch:(double)pitch Roll:(double)roll Yaw:(double)yaw
+- (void)updateMotionDataViewWithX:(CGFloat)x y:(CGFloat)y z:(CGFloat)z pitch:(double)pitch roll:(double)roll yaw:(double)yaw
 {
     _accX = x;
     _accY = y;
