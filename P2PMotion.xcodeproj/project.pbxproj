@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FD7F90F1E7888DA00A4DAC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F90E1E7888DA00A4DAC3 /* main.m */; };
+		0FD7F9121E7888DA00A4DAC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9111E7888DA00A4DAC3 /* AppDelegate.m */; };
+		0FD7F9151E7888DA00A4DAC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9141E7888DA00A4DAC3 /* ViewController.m */; };
+		0FD7F9181E7888DA00A4DAC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD7F9161E7888DA00A4DAC3 /* Main.storyboard */; };
+		0FD7F91A1E7888DA00A4DAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD7F9191E7888DA00A4DAC3 /* Assets.xcassets */; };
+		0FD7F91D1E7888DA00A4DAC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD7F91B1E7888DA00A4DAC3 /* LaunchScreen.storyboard */; };
+		0FD7F9281E7888DA00A4DAC3 /* P2PMotionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9271E7888DA00A4DAC3 /* P2PMotionTests.m */; };
+		0FD7F9331E7888DA00A4DAC3 /* P2PMotionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9321E7888DA00A4DAC3 /* P2PMotionUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FD7F9241E7888DA00A4DAC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FD7F9021E7888DA00A4DAC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FD7F9091E7888DA00A4DAC3;
+			remoteInfo = P2PMotion;
+		};
+		0FD7F92F1E7888DA00A4DAC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FD7F9021E7888DA00A4DAC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FD7F9091E7888DA00A4DAC3;
+			remoteInfo = P2PMotion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FD7F90A1E7888DA00A4DAC3 /* P2PMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2PMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FD7F90E1E7888DA00A4DAC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0FD7F9101E7888DA00A4DAC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0FD7F9111E7888DA00A4DAC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0FD7F9131E7888DA00A4DAC3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0FD7F9141E7888DA00A4DAC3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0FD7F9171E7888DA00A4DAC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FD7F9191E7888DA00A4DAC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FD7F91C1E7888DA00A4DAC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FD7F91E1E7888DA00A4DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD7F9231E7888DA00A4DAC3 /* P2PMotionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2PMotionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FD7F9271E7888DA00A4DAC3 /* P2PMotionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2PMotionTests.m; sourceTree = "<group>"; };
+		0FD7F9291E7888DA00A4DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD7F92E1E7888DA00A4DAC3 /* P2PMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2PMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FD7F9321E7888DA00A4DAC3 /* P2PMotionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2PMotionUITests.m; sourceTree = "<group>"; };
+		0FD7F9341E7888DA00A4DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FD7F9071E7888DA00A4DAC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FD7F9201E7888DA00A4DAC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FD7F92B1E7888DA00A4DAC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FD7F9011E7888DA00A4DAC3 = {
+			isa = PBXGroup;
+			children = (
+				0FD7F90C1E7888DA00A4DAC3 /* P2PMotion */,
+				0FD7F9261E7888DA00A4DAC3 /* P2PMotionTests */,
+				0FD7F9311E7888DA00A4DAC3 /* P2PMotionUITests */,
+				0FD7F90B1E7888DA00A4DAC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FD7F90B1E7888DA00A4DAC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FD7F90A1E7888DA00A4DAC3 /* P2PMotion.app */,
+				0FD7F9231E7888DA00A4DAC3 /* P2PMotionTests.xctest */,
+				0FD7F92E1E7888DA00A4DAC3 /* P2PMotionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FD7F90C1E7888DA00A4DAC3 /* P2PMotion */ = {
+			isa = PBXGroup;
+			children = (
+				0FD7F9101E7888DA00A4DAC3 /* AppDelegate.h */,
+				0FD7F9111E7888DA00A4DAC3 /* AppDelegate.m */,
+				0FD7F9131E7888DA00A4DAC3 /* ViewController.h */,
+				0FD7F9141E7888DA00A4DAC3 /* ViewController.m */,
+				0FD7F9161E7888DA00A4DAC3 /* Main.storyboard */,
+				0FD7F9191E7888DA00A4DAC3 /* Assets.xcassets */,
+				0FD7F91B1E7888DA00A4DAC3 /* LaunchScreen.storyboard */,
+				0FD7F91E1E7888DA00A4DAC3 /* Info.plist */,
+				0FD7F90D1E7888DA00A4DAC3 /* Supporting Files */,
+			);
+			path = P2PMotion;
+			sourceTree = "<group>";
+		};
+		0FD7F90D1E7888DA00A4DAC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FD7F90E1E7888DA00A4DAC3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0FD7F9261E7888DA00A4DAC3 /* P2PMotionTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FD7F9271E7888DA00A4DAC3 /* P2PMotionTests.m */,
+				0FD7F9291E7888DA00A4DAC3 /* Info.plist */,
+			);
+			path = P2PMotionTests;
+			sourceTree = "<group>";
+		};
+		0FD7F9311E7888DA00A4DAC3 /* P2PMotionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0FD7F9321E7888DA00A4DAC3 /* P2PMotionUITests.m */,
+				0FD7F9341E7888DA00A4DAC3 /* Info.plist */,
+			);
+			path = P2PMotionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FD7F9091E7888DA00A4DAC3 /* P2PMotion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FD7F9371E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotion" */;
+			buildPhases = (
+				0FD7F9061E7888DA00A4DAC3 /* Sources */,
+				0FD7F9071E7888DA00A4DAC3 /* Frameworks */,
+				0FD7F9081E7888DA00A4DAC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = P2PMotion;
+			productName = P2PMotion;
+			productReference = 0FD7F90A1E7888DA00A4DAC3 /* P2PMotion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FD7F9221E7888DA00A4DAC3 /* P2PMotionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FD7F93A1E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotionTests" */;
+			buildPhases = (
+				0FD7F91F1E7888DA00A4DAC3 /* Sources */,
+				0FD7F9201E7888DA00A4DAC3 /* Frameworks */,
+				0FD7F9211E7888DA00A4DAC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FD7F9251E7888DA00A4DAC3 /* PBXTargetDependency */,
+			);
+			name = P2PMotionTests;
+			productName = P2PMotionTests;
+			productReference = 0FD7F9231E7888DA00A4DAC3 /* P2PMotionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0FD7F92D1E7888DA00A4DAC3 /* P2PMotionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FD7F93D1E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotionUITests" */;
+			buildPhases = (
+				0FD7F92A1E7888DA00A4DAC3 /* Sources */,
+				0FD7F92B1E7888DA00A4DAC3 /* Frameworks */,
+				0FD7F92C1E7888DA00A4DAC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FD7F9301E7888DA00A4DAC3 /* PBXTargetDependency */,
+			);
+			name = P2PMotionUITests;
+			productName = P2PMotionUITests;
+			productReference = 0FD7F92E1E7888DA00A4DAC3 /* P2PMotionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FD7F9021E7888DA00A4DAC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Kelwin Joanes";
+				TargetAttributes = {
+					0FD7F9091E7888DA00A4DAC3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R4F78553MQ;
+						ProvisioningStyle = Automatic;
+					};
+					0FD7F9221E7888DA00A4DAC3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R4F78553MQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0FD7F9091E7888DA00A4DAC3;
+					};
+					0FD7F92D1E7888DA00A4DAC3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R4F78553MQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0FD7F9091E7888DA00A4DAC3;
+					};
+				};
+			};
+			buildConfigurationList = 0FD7F9051E7888DA00A4DAC3 /* Build configuration list for PBXProject "P2PMotion" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FD7F9011E7888DA00A4DAC3;
+			productRefGroup = 0FD7F90B1E7888DA00A4DAC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FD7F9091E7888DA00A4DAC3 /* P2PMotion */,
+				0FD7F9221E7888DA00A4DAC3 /* P2PMotionTests */,
+				0FD7F92D1E7888DA00A4DAC3 /* P2PMotionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FD7F9081E7888DA00A4DAC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD7F91D1E7888DA00A4DAC3 /* LaunchScreen.storyboard in Resources */,
+				0FD7F91A1E7888DA00A4DAC3 /* Assets.xcassets in Resources */,
+				0FD7F9181E7888DA00A4DAC3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FD7F9211E7888DA00A4DAC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FD7F92C1E7888DA00A4DAC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FD7F9061E7888DA00A4DAC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD7F9151E7888DA00A4DAC3 /* ViewController.m in Sources */,
+				0FD7F9121E7888DA00A4DAC3 /* AppDelegate.m in Sources */,
+				0FD7F90F1E7888DA00A4DAC3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FD7F91F1E7888DA00A4DAC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD7F9281E7888DA00A4DAC3 /* P2PMotionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FD7F92A1E7888DA00A4DAC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD7F9331E7888DA00A4DAC3 /* P2PMotionUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FD7F9251E7888DA00A4DAC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FD7F9091E7888DA00A4DAC3 /* P2PMotion */;
+			targetProxy = 0FD7F9241E7888DA00A4DAC3 /* PBXContainerItemProxy */;
+		};
+		0FD7F9301E7888DA00A4DAC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FD7F9091E7888DA00A4DAC3 /* P2PMotion */;
+			targetProxy = 0FD7F92F1E7888DA00A4DAC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0FD7F9161E7888DA00A4DAC3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FD7F9171E7888DA00A4DAC3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FD7F91B1E7888DA00A4DAC3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FD7F91C1E7888DA00A4DAC3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FD7F9351E7888DA00A4DAC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0FD7F9361E7888DA00A4DAC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FD7F9381E7888DA00A4DAC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R4F78553MQ;
+				INFOPLIST_FILE = P2PMotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.mun.cs4768.201400058.P2PMotion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0FD7F9391E7888DA00A4DAC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R4F78553MQ;
+				INFOPLIST_FILE = P2PMotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.mun.cs4768.201400058.P2PMotion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0FD7F93B1E7888DA00A4DAC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R4F78553MQ;
+				INFOPLIST_FILE = P2PMotionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.mun.cs4768.201400058.P2PMotionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/P2PMotion.app/P2PMotion";
+			};
+			name = Debug;
+		};
+		0FD7F93C1E7888DA00A4DAC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R4F78553MQ;
+				INFOPLIST_FILE = P2PMotionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.mun.cs4768.201400058.P2PMotionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/P2PMotion.app/P2PMotion";
+			};
+			name = Release;
+		};
+		0FD7F93E1E7888DA00A4DAC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = R4F78553MQ;
+				INFOPLIST_FILE = P2PMotionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.mun.cs4768.201400058.P2PMotionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = P2PMotion;
+			};
+			name = Debug;
+		};
+		0FD7F93F1E7888DA00A4DAC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = R4F78553MQ;
+				INFOPLIST_FILE = P2PMotionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.mun.cs4768.201400058.P2PMotionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = P2PMotion;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FD7F9051E7888DA00A4DAC3 /* Build configuration list for PBXProject "P2PMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FD7F9351E7888DA00A4DAC3 /* Debug */,
+				0FD7F9361E7888DA00A4DAC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FD7F9371E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FD7F9381E7888DA00A4DAC3 /* Debug */,
+				0FD7F9391E7888DA00A4DAC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0FD7F93A1E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FD7F93B1E7888DA00A4DAC3 /* Debug */,
+				0FD7F93C1E7888DA00A4DAC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0FD7F93D1E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FD7F93E1E7888DA00A4DAC3 /* Debug */,
+				0FD7F93F1E7888DA00A4DAC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FD7F9021E7888DA00A4DAC3 /* Project object */;
+}
