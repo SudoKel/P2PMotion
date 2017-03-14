@@ -15,6 +15,7 @@
 		0FD7F91D1E7888DA00A4DAC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD7F91B1E7888DA00A4DAC3 /* LaunchScreen.storyboard */; };
 		0FD7F9281E7888DA00A4DAC3 /* P2PMotionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9271E7888DA00A4DAC3 /* P2PMotionTests.m */; };
 		0FD7F9331E7888DA00A4DAC3 /* P2PMotionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9321E7888DA00A4DAC3 /* P2PMotionUITests.m */; };
+		0FD7F9421E7891D800A4DAC3 /* MotionDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9411E7891D800A4DAC3 /* MotionDataView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		0FD7F92E1E7888DA00A4DAC3 /* P2PMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2PMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD7F9321E7888DA00A4DAC3 /* P2PMotionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2PMotionUITests.m; sourceTree = "<group>"; };
 		0FD7F9341E7888DA00A4DAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD7F9401E7891D800A4DAC3 /* MotionDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionDataView.h; path = ../../../../../../../Users/labnet/st3/kssj13/Desktop/P2PMotion/P2PMotion/MotionDataView.h; sourceTree = "<group>"; };
+		0FD7F9411E7891D800A4DAC3 /* MotionDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionDataView.m; path = ../../../../../../../Users/labnet/st3/kssj13/Desktop/P2PMotion/P2PMotion/MotionDataView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				0FD7F9111E7888DA00A4DAC3 /* AppDelegate.m */,
 				0FD7F9131E7888DA00A4DAC3 /* ViewController.h */,
 				0FD7F9141E7888DA00A4DAC3 /* ViewController.m */,
+				0FD7F9401E7891D800A4DAC3 /* MotionDataView.h */,
+				0FD7F9411E7891D800A4DAC3 /* MotionDataView.m */,
 				0FD7F9161E7888DA00A4DAC3 /* Main.storyboard */,
 				0FD7F9191E7888DA00A4DAC3 /* Assets.xcassets */,
 				0FD7F91B1E7888DA00A4DAC3 /* LaunchScreen.storyboard */,
@@ -278,6 +283,7 @@
 			files = (
 				0FD7F9151E7888DA00A4DAC3 /* ViewController.m in Sources */,
 				0FD7F9121E7888DA00A4DAC3 /* AppDelegate.m in Sources */,
+				0FD7F9421E7891D800A4DAC3 /* MotionDataView.m in Sources */,
 				0FD7F90F1E7888DA00A4DAC3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
