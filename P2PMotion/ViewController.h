@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define motionDataUpdateInterval 15.0;
+
 @interface ViewController : UIViewController
-
-
+// Public methods
+- (void)startMonitoringMotion;
+- (void)stopMonitoringMotion;
 @end
 
