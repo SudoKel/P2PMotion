@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <CoreMotion/CMMotionManager.h>
 
 @interface ViewController ()
 
