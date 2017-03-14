@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4E00F21E78B10000AB7233 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4E00F11E78B10000AB7233 /* ViewController.xib */; };
 		0FD7F90F1E7888DA00A4DAC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F90E1E7888DA00A4DAC3 /* main.m */; };
 		0FD7F9121E7888DA00A4DAC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9111E7888DA00A4DAC3 /* AppDelegate.m */; };
 		0FD7F9151E7888DA00A4DAC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F9141E7888DA00A4DAC3 /* ViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4E00F11E78B10000AB7233 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = /Users/labnet/st3/kssj13/Desktop/P2PMotion/ViewController.xib; sourceTree = "<absolute>"; };
 		0FD7F90A1E7888DA00A4DAC3 /* P2PMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2PMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD7F90E1E7888DA00A4DAC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FD7F9101E7888DA00A4DAC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				0FD7F9141E7888DA00A4DAC3 /* ViewController.m */,
 				0FD7F9401E7891D800A4DAC3 /* MotionDataView.h */,
 				0FD7F9411E7891D800A4DAC3 /* MotionDataView.m */,
+				0F4E00F11E78B10000AB7233 /* ViewController.xib */,
 				0FD7F9161E7888DA00A4DAC3 /* Main.storyboard */,
 				0FD7F9191E7888DA00A4DAC3 /* Assets.xcassets */,
 				0FD7F91B1E7888DA00A4DAC3 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			files = (
 				0FD7F91D1E7888DA00A4DAC3 /* LaunchScreen.storyboard in Resources */,
 				0FD7F91A1E7888DA00A4DAC3 /* Assets.xcassets in Resources */,
+				0F4E00F21E78B10000AB7233 /* ViewController.xib in Resources */,
 				0FD7F9181E7888DA00A4DAC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +524,7 @@
 				0FD7F9391E7888DA00A4DAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FD7F93A1E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotionTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				0FD7F93C1E7888DA00A4DAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FD7F93D1E7888DA00A4DAC3 /* Build configuration list for PBXNativeTarget "P2PMotionUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +542,7 @@
 				0FD7F93F1E7888DA00A4DAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
