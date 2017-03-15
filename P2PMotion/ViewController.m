@@ -100,19 +100,6 @@
     return self;
 }
 
-/** This helper method creates a bar for visualizing motion data and adds it to the view */
-//- (void)createBarWithRect:(CGRect)rect view:(UIView *)barView color:(UIColor *)color labelFrame:(CGRect)frame labelTitle:(NSString *)title
-//{
-//    CGRect bar = rect;
-//    UIView *view = [[UIView alloc] initWithFrame:bar];
-//    view.backgroundColor = color;
-//    barView = view;
-//    [self.view addSubview:view];
-//    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-//    label.text = title;
-//    [self.view addSubview:label];
-//}
-
 /** This method starts the recording of motion data */
 - (void)startMonitoringMotion
 {
