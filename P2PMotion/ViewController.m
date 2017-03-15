@@ -29,48 +29,70 @@
         // Bars for displaying acceleration data
         // X bar
         CGRect rect = CGRectMake(160, 80, 1, 10);
-        CGRect frame = CGRectMake(155, 57, 20, 20);
-        UIColor *color = [UIColor redColor];
-        NSString *title = @"X";
-        [self createBarWithRect:rect color:color labelFrame:frame labelTitle:title];
+        UIView *view = [[UIView alloc] initWithFrame:rect];
+        view.backgroundColor = [UIColor redColor];
+        self.motDataView.viewAccX = view;
+        [self.view addSubview:view];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(155, 57, 20, 20)];
+        label.text = @"X";
+        [self.view addSubview:label];
         
         // Y bar
         rect = CGRectMake(160, 130, 1, 10);
-        frame = CGRectMake(155, 107, 20, 20);
-        title = @"Y";
-        [self createBarWithRect:rect color:color labelFrame:frame labelTitle:title];
+        view = [[UIView alloc] initWithFrame:rect];
+        view.backgroundColor = [UIColor redColor];
+        self.motDataView.viewAccY = view;
+        [self.view addSubview:view];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 107, 20, 20)];
+        label.text = @"Y";
+        [self.view addSubview:label];
         
         // Z bar
         rect = CGRectMake(160, 180, 1, 10);
-        frame = CGRectMake(155, 157, 20, 20);
-        title = @"Z";
-        [self createBarWithRect:rect color:color labelFrame:frame labelTitle:title];
+        view = [[UIView alloc] initWithFrame:rect];
+        view.backgroundColor = [UIColor redColor];
+        self.motDataView.viewAccZ = view;
+        [self.view addSubview:view];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 157, 20, 20)];
+        label.text = @"Z";
+        [self.view addSubview:label];
         
         // Bars for displaying acceleration data
         int rotationDataOffset = 240;
         // Pitch bar
         rect = CGRectMake(160, 80 + rotationDataOffset, 1, 10);
-        frame = CGRectMake(155, 57 + rotationDataOffset, 20, 20);
-        color = [UIColor redColor];
-        title = @"Pitch";
-        [self createBarWithRect:rect color:color labelFrame:frame labelTitle:title];
+        view = [[UIView alloc] initWithFrame:rect];
+        view.backgroundColor = [UIColor blueColor];
+        self.motDataView.viewPitch = view;
+        [self.view addSubview:view];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(142, 57 + rotationDataOffset, 60, 20)];
+        label.text = @"Pitch";
+        [self.view addSubview:label];
         
         // Roll bar
         rect = CGRectMake(160, 130 + rotationDataOffset, 1, 10);
-        frame = CGRectMake(155, 107 + rotationDataOffset, 20, 20);
-        title = @"Roll";
-        [self createBarWithRect:rect color:color labelFrame:frame labelTitle:title];
+        view = [[UIView alloc] initWithFrame:rect];
+        view.backgroundColor = [UIColor blueColor];
+        self.motDataView.viewRoll = view;
+        [self.view addSubview:view];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(148, 107 + rotationDataOffset, 60, 20)];
+        label.text = @"Roll";
+        [self.view addSubview:label];
         
         // Yaw bar
         rect = CGRectMake(160, 180 + rotationDataOffset, 1, 10);
-        frame = CGRectMake(155, 157 + rotationDataOffset, 20, 20);
-        title = @"Yaw";
-        [self createBarWithRect:rect color:color labelFrame:frame labelTitle:title];
+        view = [[UIView alloc] initWithFrame:rect];
+        view.backgroundColor = [UIColor blueColor];
+        self.motDataView.viewYaw = view;
+        [self.view addSubview:view];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(145, 157 + rotationDataOffset, 60, 20)];
+        label.text = @"Yaw";
+        [self.view addSubview:label];
         
         self.motman = [CMMotionManager new];
         
         // Check if accelerometer and gyro available
-        if (self.motman.deviceMotionActive)
+        if (self.motman.deviceMotionAvailable)
             [self startMonitoringMotion];
         else
             NSLog(@"Sorry, device does not support accelerometer or gyro...");
@@ -79,17 +101,17 @@
 }
 
 /** This helper method creates a bar for visualizing motion data and adds it to the view */
-- (void)createBarWithRect:(CGRect)rect color:(UIColor *)color labelFrame:(CGRect)frame labelTitle:(NSString *)title
-{
-    CGRect bar = rect;
-    UIView *view = [[UIView alloc] initWithFrame:bar];
-    view.backgroundColor = color;
-    self.motDataView.viewAccX = view;
-    [self.view addSubview:view];
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.text = title;
-    [self.view addSubview:label];
-}
+//- (void)createBarWithRect:(CGRect)rect view:(UIView *)barView color:(UIColor *)color labelFrame:(CGRect)frame labelTitle:(NSString *)title
+//{
+//    CGRect bar = rect;
+//    UIView *view = [[UIView alloc] initWithFrame:bar];
+//    view.backgroundColor = color;
+//    barView = view;
+//    [self.view addSubview:view];
+//    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+//    label.text = title;
+//    [self.view addSubview:label];
+//}
 
 /** This method starts the recording of motion data */
 - (void)startMonitoringMotion

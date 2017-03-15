@@ -15,6 +15,9 @@
     double _pitch, _roll, _yaw;
 }
 
+@synthesize viewAccX, viewAccY, viewAccZ;
+@synthesize viewPitch, viewRoll, viewYaw;
+
 /** Initializer for our class */
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,7 +31,7 @@
     // For acceleration data
     float multiplier = 100; // To view significant change
     NSArray *bars = [NSArray arrayWithObjects:self.viewAccX, self.viewAccY, self.viewAccZ, nil];
-    CGFloat acc[] = {_accX, _accY, _accZ};
+    CGFloat acc[3] = {_accX, _accY, _accZ};
     
     // Update bars to reflect change
     for (int i = 0; i < 3 ; i++)
@@ -52,7 +55,7 @@
     // For rotation data
     multiplier = 50;
     bars = [NSArray arrayWithObjects:self.viewPitch, self.viewRoll, self.viewYaw, nil];
-    CGFloat rot[] = {_pitch, _roll, _yaw};
+    CGFloat rot[3] = {_pitch, _roll, _yaw};
     
     // Update bars to reflect change
     for (int i = 0; i < 3 ; i++)
