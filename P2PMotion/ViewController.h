@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
+#import <GameKit/GKPublicProtocols.h>
 
 #define motionDataUpdateInterval 15.0;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MCSessionDelegate, MCBrowserViewControllerDelegate>
 // Public methods
 - (void)startMonitoringMotion;
 - (void)stopMonitoringMotion;

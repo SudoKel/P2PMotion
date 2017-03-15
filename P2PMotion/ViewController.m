@@ -15,6 +15,7 @@
 @property (nonatomic, strong) CMMotionManager *motman;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) MotionDataView *motDataView;
+
 @end
 
 @implementation ViewController
@@ -28,64 +29,64 @@
         
         // Bars for displaying acceleration data
         // X bar
-        CGRect rect = CGRectMake(160, 80, 1, 10);
+        CGRect rect = CGRectMake(160, 140, 1, 10);
         UIView *view = [[UIView alloc] initWithFrame:rect];
         view.backgroundColor = [UIColor redColor];
         self.motDataView.viewAccX = view;
         [self.view addSubview:view];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(155, 57, 20, 20)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(155, 117, 20, 20)];
         label.text = @"X";
         [self.view addSubview:label];
         
         // Y bar
-        rect = CGRectMake(160, 130, 1, 10);
+        rect = CGRectMake(160, 190, 1, 10);
         view = [[UIView alloc] initWithFrame:rect];
         view.backgroundColor = [UIColor redColor];
         self.motDataView.viewAccY = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 107, 20, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 167, 20, 20)];
         label.text = @"Y";
         [self.view addSubview:label];
         
         // Z bar
-        rect = CGRectMake(160, 180, 1, 10);
+        rect = CGRectMake(160, 240, 1, 10);
         view = [[UIView alloc] initWithFrame:rect];
         view.backgroundColor = [UIColor redColor];
         self.motDataView.viewAccZ = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 157, 20, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 217, 20, 20)];
         label.text = @"Z";
         [self.view addSubview:label];
         
         // Bars for displaying acceleration data
         int rotationDataOffset = 240;
         // Pitch bar
-        rect = CGRectMake(160, 80 + rotationDataOffset, 1, 10);
+        rect = CGRectMake(160, 140 + rotationDataOffset, 1, 10);
         view = [[UIView alloc] initWithFrame:rect];
         view.backgroundColor = [UIColor blueColor];
         self.motDataView.viewPitch = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(142, 57 + rotationDataOffset, 60, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(142, 117 + rotationDataOffset, 60, 20)];
         label.text = @"Pitch";
         [self.view addSubview:label];
         
         // Roll bar
-        rect = CGRectMake(160, 130 + rotationDataOffset, 1, 10);
+        rect = CGRectMake(160, 190 + rotationDataOffset, 1, 10);
         view = [[UIView alloc] initWithFrame:rect];
         view.backgroundColor = [UIColor blueColor];
         self.motDataView.viewRoll = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(148, 107 + rotationDataOffset, 60, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(148, 167 + rotationDataOffset, 60, 20)];
         label.text = @"Roll";
         [self.view addSubview:label];
         
         // Yaw bar
-        rect = CGRectMake(160, 180 + rotationDataOffset, 1, 10);
+        rect = CGRectMake(160, 240 + rotationDataOffset, 1, 10);
         view = [[UIView alloc] initWithFrame:rect];
         view.backgroundColor = [UIColor blueColor];
         self.motDataView.viewYaw = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(145, 157 + rotationDataOffset, 60, 20)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(145, 217 + rotationDataOffset, 60, 20)];
         label.text = @"Yaw";
         [self.view addSubview:label];
         
