@@ -15,7 +15,6 @@
 @property (nonatomic, strong) CMMotionManager *motman;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) MotionDataView *motDataView;
-
 @end
 
 @implementation ViewController
@@ -149,8 +148,42 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self.motDataView updateMotionDataViewWithX:0 y:0 z:0 pitch:0 roll:0 yaw:0];
+    
+    // Create interface
+    UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
+    navBar.backgroundColor = [UIColor whiteColor];
+    
+    UINavigationItem *navItem = [UINavigationItem new];
+    navItem.title = @"P2PMotion";
+    
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Browse"
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:self
+                                                                action:@selector(browseForDevices:)];
+    
+    navItem.rightBarButtonItem = rightBtn;
+    navBar.items = @[navItem];
+    
+    [self.view addSubview:navBar];
+    
+    UIButton *disconnectBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [disconnectBtn addTarget:self action:@selector(disconnectFromDevice:) forControlEvents:UIControlEventTouchUpInside];
+    [disconnectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
+    disconnectBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
+    [disconnectBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    disconnectBtn.frame = CGRectMake(80, 510, 160, 40);
+    [self.view addSubview:disconnectBtn];
 }
 
+- (void)browseForDevices:(UIButton *)sender
+{
+    
+}
+
+- (void)disconnectFromDevice:(UIButton *)sender
+{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
