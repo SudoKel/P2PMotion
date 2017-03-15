@@ -11,13 +11,86 @@
 #import <CoreMotion/CMMotionManager.h>
 
 @interface ViewController ()
+{
+    CGRect originalViewFrame;
+    BOOL deviceConnected;
+}
+
 // Properties
 @property (nonatomic, strong) CMMotionManager *motman;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) MotionDataView *motDataView;
+@property (nonatomic, strong) UIBarButtonItem *browseBtn;
+@property (nonatomic, strong) UIButton *disconnectBtn;
+@property (nonatomic, strong) MCSession *session;
+@property (nonatomic, strong) MCAdvertiserAssistant *advAssistant;
+@property (nonatomic, strong) MCBrowserViewController *browserVController;
+
+- (void)setNotConnectedState;
+- (void)setConnectedState;
+- (void)restoreView;
 @end
 
 @implementation ViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    originalViewFrame = self.view.frame;
+    deviceConnected = NO;
+    [self setNotConnectedState];
+    
+    // Create interface
+    UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
+    navBar.backgroundColor = [UIColor whiteColor];
+    
+    UINavigationItem *navItem = [UINavigationItem new];
+    navItem.title = @"P2PMotion";
+    
+    self.browseBtn = [[UIBarButtonItem alloc] initWithTitle:@"Browse"
+                                                      style:UIBarButtonItemStylePlain
+                                                     target:self
+                                                     action:@selector(browseForDevices:)];
+    
+    navItem.rightBarButtonItem = self.browseBtn;
+    navBar.items = @[navItem];
+    [self.view addSubview:navBar];
+    
+    self.disconnectBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.disconnectBtn addTarget:self action:@selector(disconnectFromDevice:) forControlEvents:UIControlEventTouchUpInside];
+    [self.disconnectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
+    self.disconnectBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
+    [self.disconnectBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.disconnectBtn.frame = CGRectMake(80, 510, 160, 40);
+    [self.view addSubview:self.disconnectBtn];
+    
+    // Prepare the session
+    MCPeerID *devicePeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
+    self.session = [[MCSession alloc] initWithPeer:devicePeerID];
+    self.session.delegate = self;
+    
+    // Begin advertising
+    self.advAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:serviceType discoveryInfo:nil session:self.session];
+    [self.advAssistant start];
+    
+    // Initialize motion data
+    [self.motDataView updateMotionDataViewWithX:0 y:0 z:0 pitch:0 roll:0 yaw:0];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (deviceConnected)
+        [self setConnectedState];
+    else
+        [self setNotConnectedState];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 /** Initializer for our view controller */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,11 +164,13 @@
         
         self.motman = [CMMotionManager new];
         
+        [self startMonitoringMotion];
+        
         // Check if accelerometer and gyro available
-        if (self.motman.deviceMotionAvailable)
-            [self startMonitoringMotion];
-        else
-            NSLog(@"Sorry, device does not support accelerometer or gyro...");
+//        if (self.motman.deviceMotionAvailable)
+//            [self startMonitoringMotion];
+//        else
+//            NSLog(@"Sorry, device does not support accelerometer or gyro...");
     }
     return self;
 }
@@ -139,56 +214,125 @@
     // Retrieve rotation data
     CMRotationRate rot = self.motman.gyroData.rotationRate;
     
-    // Refresh data of view
+    // Refresh motion data of view
     [self.motDataView updateMotionDataViewWithX:acc.x y:acc.y z:acc.z pitch:rot.x roll:rot.y yaw:rot.z];
+    
+    // Send motion data to other device if connected
+    if (deviceConnected)
+    {
+        NSArray *peerIDs = self.session.connectedPeers;
+        NSString *strData = [NSString stringWithFormat:@"%f %f %f %f %f %f", acc.x, acc.y, acc.z, rot.x, rot.y, rot.z];
+        [self.session sendData:[strData dataUsingEncoding:NSASCIIStringEncoding]
+                       toPeers:peerIDs
+                      withMode:MCSessionSendDataReliable
+                         error:nil];
+    }
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    [self.motDataView updateMotionDataViewWithX:0 y:0 z:0 pitch:0 roll:0 yaw:0];
-    
-    // Create interface
-    UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
-    navBar.backgroundColor = [UIColor whiteColor];
-    
-    UINavigationItem *navItem = [UINavigationItem new];
-    navItem.title = @"P2PMotion";
-    
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Browse"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(browseForDevices:)];
-    
-    navItem.rightBarButtonItem = rightBtn;
-    navBar.items = @[navItem];
-    
-    [self.view addSubview:navBar];
-    
-    UIButton *disconnectBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [disconnectBtn addTarget:self action:@selector(disconnectFromDevice:) forControlEvents:UIControlEventTouchUpInside];
-    [disconnectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
-    disconnectBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
-    [disconnectBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    disconnectBtn.frame = CGRectMake(80, 510, 160, 40);
-    [self.view addSubview:disconnectBtn];
-}
-
-- (void)browseForDevices:(UIButton *)sender
+/** This method displays a new view to browse for nearby devices */
+- (void)browseForDevices:(UIBarButtonItem *)sender
 {
-    
+    self.browserVController = [[MCBrowserViewController alloc] initWithServiceType:serviceType session:self.session];
+    self.browserVController.delegate = self;
+    [self presentViewController:self.browserVController animated:YES completion:nil];
 }
 
+/** This method disconnects the current device from the connected device */
 - (void)disconnectFromDevice:(UIButton *)sender
 {
+    [self setNotConnectedState];
+    deviceConnected = NO;
+    [self.session disconnect];
+}
+
+/** This method updates the interface when device is disconnected */
+- (void)setNotConnectedState
+{
+    self.browseBtn.enabled = YES;
+    self.disconnectBtn.enabled = NO;
+}
+
+/** This method updates the interface when the device is connected */
+- (void)setConnectedState
+{
+    self.browseBtn.enabled = NO;
+    self.disconnectBtn.enabled = YES;
+}
+
+/** This method simply restores the view to our original interface */
+- (void)restoreView
+{
+    self.view.frame = originalViewFrame;
+}
+
+#pragma-mark <MCSessionDelegate> methods
+- (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
+{
+    if (state == MCSessionStateConnected)
+    {
+        [self setConnectedState];
+        deviceConnected = YES;
+    }
+    else
+    {
+        [self setNotConnectedState];
+        deviceConnected = NO;
+    }
+}
+
+- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
+{
+    NSString *strData = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    
+    // For debugging
+    NSLog(@"Received motion data: %@", strData);
+    
+    NSArray *motionData = [NSArray new];
+    
+    // Split string data into individual values representing components of motion data
+    motionData = [strData componentsSeparatedByString:@" "];
+    
+    // Motion data vars
+    CGFloat accX, accY, accZ;
+    double pitch, roll, yaw;
+    
+    // Retrieve corresponding motion data values
+    accX = [[motionData objectAtIndex:0] floatValue];
+    accY = [[motionData objectAtIndex:1] floatValue];
+    accZ = [[motionData objectAtIndex:2] floatValue];
+    
+    pitch = [[motionData objectAtIndex:3] doubleValue];
+    roll = [[motionData objectAtIndex:4] doubleValue];
+    yaw = [[motionData objectAtIndex:5] doubleValue];
+    
+    // Refresh motion data of view
+    [self.motDataView updateMotionDataViewWithX:accX y:accY z:accZ pitch:pitch roll:roll yaw:yaw];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID
+{
+    
 }
 
+- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
+{
+    
+}
 
+- (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error
+{
+    
+}
+
+#pragma-mark <MCBrowserViewControllerDelegate> methods
+- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController
+{
+    [browserViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController
+{
+    [browserViewController dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -10,7 +10,8 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import <GameKit/GKPublicProtocols.h>
 
-#define motionDataUpdateInterval 15.0;
+#define motionDataUpdateInterval 15.0
+#define serviceType @"Motion-data"
 
 @interface ViewController : UIViewController <MCSessionDelegate, MCBrowserViewControllerDelegate>
 // Public methods
