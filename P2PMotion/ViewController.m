@@ -14,6 +14,10 @@
 {
     CGRect originalViewFrame;
     BOOL deviceConnected;
+    
+    // Other devices motion data vars
+    CGFloat peerAccX, peerAccY, peerAccZ;
+    double peerPitch, peerRoll, peerYaw;
 }
 
 // Properties
@@ -165,12 +169,6 @@
         self.motman = [CMMotionManager new];
         
         [self startMonitoringMotion];
-        
-        // Check if accelerometer and gyro available
-//        if (self.motman.deviceMotionAvailable)
-//            [self startMonitoringMotion];
-//        else
-//            NSLog(@"Sorry, device does not support accelerometer or gyro...");
     }
     return self;
 }
@@ -214,9 +212,6 @@
     // Retrieve rotation data
     CMRotationRate rot = self.motman.gyroData.rotationRate;
     
-    // Refresh motion data of view
-    [self.motDataView updateMotionDataViewWithX:acc.x y:acc.y z:acc.z pitch:rot.x roll:rot.y yaw:rot.z];
-    
     // Send motion data to other device if connected
     if (deviceConnected)
     {
@@ -227,6 +222,19 @@
                       withMode:MCSessionSendDataReliable
                          error:nil];
     }
+    else
+    {
+        // Otherwise use current devices motion data
+        peerAccX = acc.x;
+        peerAccY = acc.y;
+        peerAccZ = acc.z;
+        peerPitch = rot.x;
+        peerRoll = rot.y;
+        peerYaw = rot.z;
+    }
+    
+    // Update the view with new motion data
+    [self.motDataView updateMotionDataViewWithX:peerAccX y:peerAccY z:peerAccZ pitch:peerPitch roll:peerRoll yaw:peerYaw];
 }
 
 /** This method displays a new view to browse for nearby devices */
@@ -292,22 +300,14 @@
     // Split string data into individual values representing components of motion data
     motionData = [strData componentsSeparatedByString:@" "];
     
-    // Motion data vars
-    CGFloat accX, accY, accZ;
-    double pitch, roll, yaw;
-    
     // Retrieve corresponding motion data values
-    accX = [[motionData objectAtIndex:0] floatValue];
-    accY = [[motionData objectAtIndex:1] floatValue];
-    accZ = [[motionData objectAtIndex:2] floatValue];
+    peerAccX = [[motionData objectAtIndex:0] floatValue];
+    peerAccY = [[motionData objectAtIndex:1] floatValue];
+    peerAccZ = [[motionData objectAtIndex:2] floatValue];
     
-    pitch = [[motionData objectAtIndex:3] doubleValue];
-    roll = [[motionData objectAtIndex:4] doubleValue];
-    yaw = [[motionData objectAtIndex:5] doubleValue];
-    
-    // Refresh motion data of view
-    [self.motDataView updateMotionDataViewWithX:accX y:accY z:accZ pitch:pitch roll:roll yaw:yaw];
-    
+    peerPitch = [[motionData objectAtIndex:3] doubleValue];
+    peerRoll = [[motionData objectAtIndex:4] doubleValue];
+    peerYaw = [[motionData objectAtIndex:5] doubleValue];
 }
 
 - (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID
