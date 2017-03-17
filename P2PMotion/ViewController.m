@@ -18,6 +18,14 @@
     // Other devices motion data vars
     CGFloat peerAccX, peerAccY, peerAccZ;
     double peerPitch, peerRoll, peerYaw;
+    
+    // Labels
+    UILabel *accXLabel;
+    UILabel *accYLabel;
+    UILabel *accZLabel;
+    UILabel *pitchLabel;
+    UILabel *rollLabel;
+    UILabel *yawLabel;
 }
 
 // Properties
@@ -110,9 +118,9 @@
         view.backgroundColor = [UIColor redColor];
         self.motDataView.viewAccX = view;
         [self.view addSubview:view];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(155, 117, 20, 20)];
-        label.text = @"X";
-        [self.view addSubview:label];
+        accXLabel = [[UILabel alloc] initWithFrame:CGRectMake(155, 117, 100, 20)];
+        accXLabel.text = @"X: ";
+        [self.view addSubview:accXLabel];
         
         // Y bar
         rect = CGRectMake(160, 190, 1, 10);
@@ -120,9 +128,9 @@
         view.backgroundColor = [UIColor redColor];
         self.motDataView.viewAccY = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 167, 20, 20)];
-        label.text = @"Y";
-        [self.view addSubview:label];
+        accYLabel = [[UILabel alloc] initWithFrame:CGRectMake(155, 167, 100, 20)];
+        accYLabel.text = @"Y: ";
+        [self.view addSubview:accYLabel];
         
         // Z bar
         rect = CGRectMake(160, 240, 1, 10);
@@ -130,9 +138,9 @@
         view.backgroundColor = [UIColor redColor];
         self.motDataView.viewAccZ = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(155, 217, 20, 20)];
-        label.text = @"Z";
-        [self.view addSubview:label];
+        accZLabel = [[UILabel alloc] initWithFrame:CGRectMake(155, 217, 100, 20)];
+        accZLabel.text = @"Z: ";
+        [self.view addSubview:accZLabel];
         
         // Bars for displaying acceleration data
         int rotationDataOffset = 240;
@@ -142,9 +150,9 @@
         view.backgroundColor = [UIColor blueColor];
         self.motDataView.viewPitch = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(142, 117 + rotationDataOffset, 60, 20)];
-        label.text = @"Pitch";
-        [self.view addSubview:label];
+        pitchLabel = [[UILabel alloc] initWithFrame:CGRectMake(142, 117 + rotationDataOffset, 140, 20)];
+        pitchLabel.text = @"Pitch: ";
+        [self.view addSubview:pitchLabel];
         
         // Roll bar
         rect = CGRectMake(160, 190 + rotationDataOffset, 1, 10);
@@ -152,9 +160,9 @@
         view.backgroundColor = [UIColor blueColor];
         self.motDataView.viewRoll = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(148, 167 + rotationDataOffset, 60, 20)];
-        label.text = @"Roll";
-        [self.view addSubview:label];
+        rollLabel = [[UILabel alloc] initWithFrame:CGRectMake(148, 167 + rotationDataOffset, 140, 20)];
+        rollLabel.text = @"Roll: ";
+        [self.view addSubview:rollLabel];
         
         // Yaw bar
         rect = CGRectMake(160, 240 + rotationDataOffset, 1, 10);
@@ -162,9 +170,9 @@
         view.backgroundColor = [UIColor blueColor];
         self.motDataView.viewYaw = view;
         [self.view addSubview:view];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(145, 217 + rotationDataOffset, 60, 20)];
-        label.text = @"Yaw";
-        [self.view addSubview:label];
+        yawLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 217 + rotationDataOffset, 140, 20)];
+        yawLabel.text = @"Yaw: ";
+        [self.view addSubview:yawLabel];
         
         self.motman = [CMMotionManager new];
         
@@ -222,9 +230,17 @@
                       withMode:MCSessionSendDataReliable
                          error:nil];
     }
-    else
+    else // Otherwise use current devices motion data
     {
-        // Otherwise use current devices motion data
+        // Update labels with data
+        accXLabel.text = [NSString stringWithFormat:@"X: %.04f", acc.x];
+        accYLabel.text = [NSString stringWithFormat:@"Y: %.04f", acc.y];
+        accZLabel.text = [NSString stringWithFormat:@"Z: %.04f", acc.z];
+        pitchLabel.text = [NSString stringWithFormat:@"Pitch: %.04f", rot.x];
+        rollLabel.text = [NSString stringWithFormat:@"Roll: %.04f", rot.y];
+        yawLabel.text = [NSString stringWithFormat:@"Yaw: %.04f", rot.z];
+        
+        // Get current motion data
         peerAccX = acc.x;
         peerAccY = acc.y;
         peerAccZ = acc.z;
